@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Инвнтрзция 0.01</string>
+    <string name="scan_qrcode_tips">Штрихкод/QR-код</string>
+    <string name="github_address">https://github.com/arnozhang/android-zxing-demo</string>
+    <string name="light">Фонарик</string>
+    <string name="stocktaking">stocktacking.realm</string>
+    <string name="scan">Сканировать</string>
+    <string name="download_nbarcodes">Загрузить задание</string>
+    <string name="parse">Разобрать</string>
+    <string name="manual_barcode_qr_enter">Ручной ввод штрихкода</string>
+    <string name="find_code">Найти</string>
+    <string name="max_memory_heap">Max Memory Heap:</string>
+</resources>

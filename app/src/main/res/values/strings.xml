@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Stocktaking</string>
+    <string name="scan_qrcode_tips">Scan QR Code</string>
+    <string name="github_address">https://github.com/arnozhang/android-zxing-demo</string>
+    <string name="light">Light</string>
+    <string name="stocktaking">stocktacking.realm</string>
+    <string name="scan">Scan</string>
+    <string name="download_nbarcodes">download barcodes</string>
+    <string name="parse">Parse</string>
+    <string name="manual_barcode_qr_enter">Manual barcode/QR enter</string>
+    <string name="find_code">Find code</string>
+    <string name="max_memory_heap">Max Memory Heap:</string>
+</resources>
