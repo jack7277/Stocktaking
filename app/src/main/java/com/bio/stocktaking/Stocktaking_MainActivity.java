@@ -112,7 +112,7 @@ public class Stocktaking_MainActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (barcode.equals("")) return;
+        if (barcode.trim().isEmpty()) return;
 
         long bcode = Long.parseLong(barcode);
 

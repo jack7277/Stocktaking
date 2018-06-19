@@ -26,7 +26,6 @@ import it.sauronsoftware.ftp4j.FTPIllegalReplyException;
 
 import static com.bio.stocktaking.Stocktaking_MainActivity.BARCODES_CSV;
 import static com.bio.stocktaking.Stocktaking_MainActivity.FTP_IP1;
-import static com.bio.stocktaking.Stocktaking_MainActivity.FTP_IP2;
 
 
 public class ConnectFtpDownloadXLSX extends AsyncTask<Void, Void, Void> {
@@ -82,14 +81,8 @@ public class ConnectFtpDownloadXLSX extends AsyncTask<Void, Void, Void> {
             client.connect(FTP_IP1, 990);
         } catch (IOException e) {
             boolean clientConnected = client.isConnected(); // ==false при ошибке
-            if (!clientConnected) try {
-                client.connect(FTP_IP2, 990);
-            } catch (IOException e1) {
-                e1.printStackTrace();
-            } catch (FTPIllegalReplyException e1) {
-                e1.printStackTrace();
-            } catch (FTPException e1) {
-                e1.printStackTrace();
+            if (!clientConnected) {
+                //client.connect(FTP_IP2, 990);
             }
             e.printStackTrace();
         } catch (FTPIllegalReplyException e) {
