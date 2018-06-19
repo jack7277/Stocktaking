@@ -10,4 +10,14 @@
     <string name="manual_barcode_qr_enter">Manual barcode/QR enter</string>
     <string name="find_code">Find code</string>
     <string name="max_memory_heap">Max Memory Heap:</string>
+    <string name="id">ID:</string>
+    <string name="barcode">Barcode:</string>
+    <string name="name">Name:</string>
+    <string name="vcode">Vendor Code:</string>
+    <string name="amount">Amount:</string>
+    <string name="price">Price:</string>
+    <string name="box_number">Box Number:</string>
+    <string name="input_file_was_not_found">input file was not found</string>
+    <string name="scan_canceled">Scan Canceled!</string>
+    <string name="nothing_found">Nothing found</string>
 </resources>

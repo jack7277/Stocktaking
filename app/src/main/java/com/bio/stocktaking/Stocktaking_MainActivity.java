@@ -58,6 +58,8 @@ public class Stocktaking_MainActivity extends AppCompatActivity {
     final public static String BARCODES_CSV = "barcodes.csv";
     private static final String TAG = "DEBUG";
 
+    public final static String BARCODE_FIELD = "barcode";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -118,18 +120,17 @@ public class Stocktaking_MainActivity extends AppCompatActivity {
 
         Realm realm = Realm.getDefaultInstance();
 
-
         RealmResults<AllGoods_DB> items = null;
         try {
             items = realm.where(AllGoods_DB.class)
-                    .equalTo("barcode", bcode)
+                    .equalTo(BARCODE_FIELD, bcode)
                     .findAll();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         if (items.size() == 0) {
-            toast("Nothing found");
+            toast(getString(R.string.nothing_found));
             return;
         }
 
@@ -145,13 +146,13 @@ public class Stocktaking_MainActivity extends AppCompatActivity {
                 double price = items.get(i).getPrice();
                 String boxnum = items.get(i).getBoxNumber();
 
-                result = "ID: " + id + "\n"
-                        + "Штрихкод: " + bc + "\n"
-                        + "Название: " + name + "\n"
-                        + "Артикул: " + artikul + "\n"
-                        + "Количество: " + kolvo + "\n"
-                        + "Цена: " + price + "\n"
-                        + "Номер коробки: " + boxnum + "\n\n";
+                result = getString(R.string.id) + id + "\n"
+                        + getString(R.string.barcode) + bc + "\n"
+                        + getString(R.string.name) + name + "\n"
+                        + getString(R.string.vcode) + artikul + "\n"
+                        + getString(R.string.amount) + kolvo + "\n"
+                        + getString(R.string.price) + price + "\n"
+                        + getString(R.string.box_number) + boxnum + "\n\n";
 
                 ((TextView) findViewById(R.id.textViewResult)).setText(result);
 
@@ -206,7 +207,7 @@ public class Stocktaking_MainActivity extends AppCompatActivity {
 //            }
         } catch (Exception e) {
             e.printStackTrace();
-            Toast.makeText(this, "input file was not found", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.input_file_was_not_found, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -226,7 +227,7 @@ public class Stocktaking_MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
             } else {
-                Toast.makeText(this, "Scan Canceled!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.scan_canceled, Toast.LENGTH_SHORT).show();
             }
         }
     }
