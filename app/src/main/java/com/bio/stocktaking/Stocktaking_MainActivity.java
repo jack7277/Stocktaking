@@ -21,6 +21,8 @@ package com.bio.stocktaking;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
@@ -53,7 +55,7 @@ public class Stocktaking_MainActivity extends AppCompatActivity {
     private static final int REQUEST_FOR_SCAN = 1;
 
     // ftp ip
-    final public static String FTP_IP1 = "213.177.x.x";
+    public static String FTP_IP1 = "213.177.x.x";
     final public static String FTP_IP2 = "95.79.x.x";
     final public static String BARCODES_CSV = "barcodes.csv";
     private static final String TAG = "DEBUG";
@@ -82,10 +84,6 @@ public class Stocktaking_MainActivity extends AppCompatActivity {
 
         long maxmem = Runtime.getRuntime().maxMemory();
         ((TextView) findViewById(R.id.textViewMaxMerory)).setText(String.valueOf(maxmem));
-
-//        System.setProperty("org.apache.poi.javax.xml.stream.XMLInputFactory", "com.fasterxml.aalto.stax.InputFactoryImpl");
-//        System.setProperty("org.apache.poi.javax.xml.stream.XMLOutputFactory", "com.fasterxml.aalto.stax.OutputFactoryImpl");
-//        System.setProperty("org.apache.poi.javax.xml.stream.XMLEventFactory", "com.fasterxml.aalto.stax.EventFactoryImpl");
 
         EditText editTextManualBarcode = findViewById(R.id.editTextManualBarcode);
         InputMethodManager keyboard = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -177,9 +175,43 @@ public class Stocktaking_MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.buttonDownloadBarcodes)
     void buttonDownloadBarcodesClick() {
-        ConnectFtpDownloadXLSX downloadXLSX = new ConnectFtpDownloadXLSX(getApplicationContext());
-        downloadXLSX.execute();
+        FTP_IP1 = ((EditText) findViewById(R.id.editTextManualBarcode)).getText().toString().trim();
+
+        if (isOnline()) {
+            ConnectFtpDownloadXLSX downloadXLSX = new ConnectFtpDownloadXLSX(getApplicationContext());
+            downloadXLSX.execute();
+        } else {
+            showToast(getString(R.string.no_internet));
+        }
     }
+
+    void showToast(final String err) {
+        runOnUiThread(new Runnable() {
+            public void run() {
+                Toast.makeText(getApplicationContext(), err, Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+
+    // проверяем есть ли интернеты эти ваши
+    public boolean isOnline() {
+        ConnectivityManager cm =
+                (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = null;
+        try {
+            netInfo = cm.getActiveNetworkInfo();
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+
+        if (netInfo != null && netInfo.isConnected()) {
+            return true;
+        }
+
+        return false;
+    }
+
 
     @OnClick(R.id.buttonParseXLSX)
     void buttonParseXLSXClick() {
