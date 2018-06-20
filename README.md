@@ -5,6 +5,8 @@
 Загрузка файла базы данных в формате CSV (cp1251) через  FTPS, парсинг в Realm
 Database
 
+Mozilla FTPS Settings in MOZILLA_FTPS_SETTINGS directory
+
 Формат экселя -> сохранить в CSV с разделителем ";"
 
 Первая строка: Штрихкод (число), Название (текст), Артикул (число),
