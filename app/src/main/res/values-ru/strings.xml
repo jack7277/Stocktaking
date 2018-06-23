@@ -7,7 +7,7 @@
     <string name="scan">Сканировать</string>
     <string name="download_nbarcodes">Загрузить задание</string>
     <string name="parse">Разобрать</string>
-    <string name="manual_barcode_qr_enter">Ручной ввод штрихкода/ftp it</string>
+    <string name="manual_barcode_qr_enter">Ручной ввод штрихкода/ftp ip</string>
     <string name="find_code">Найти</string>
     <string name="max_memory_heap">Max Memory Heap:</string>
     <string name="id">ID:</string>
