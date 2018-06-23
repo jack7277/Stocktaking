@@ -35,5 +35,6 @@ dependencies {
     implementation files('libs/ftp4j-1.7.2.jar')
 //    implementation files('libs/poishadow.jar')
     implementation 'com.shamanland:xdroid-toaster:0.0.10'
+    implementation 'com.rollbar:rollbar-java:1.2.0'
     apply plugin: 'realm-android'
 }

@@ -54,6 +54,8 @@ public class Stocktaking_MainActivity extends AppCompatActivity {
 
     private static final int REQUEST_FOR_SCAN = 1;
 
+
+
     // ftp ip
     public static String FTP_IP1 = "213.177.x.x";
     final public static String FTP_IP2 = "95.79.x.x";
@@ -62,12 +64,22 @@ public class Stocktaking_MainActivity extends AppCompatActivity {
 
     public final static String BARCODE_FIELD = "barcode";
 
+
+//    public static final Rollbar rollbar = new Rollbar(
+//            withAccessToken(ROLLBAR_API_KEY)
+//                    .environment("Demo v." + APP_VERSION)
+//                    .handleUncaughtErrors(true)
+//                    .build());
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
+
+
 
         //
         Realm.init(this);
@@ -213,8 +225,8 @@ public class Stocktaking_MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick(R.id.buttonParseXLSX)
-    void buttonParseXLSXClick() {
+    @OnClick(R.id.buttonParse)
+    void buttonParseClick() {
 //        XLSXparser.parseXLSX(getApplicationContext());
 
 //        XLSXparser parserXLSX = new XLSXparser(getApplicationContext());
@@ -228,7 +240,7 @@ public class Stocktaking_MainActivity extends AppCompatActivity {
             CSVparver reader = new CSVparver(new InputStreamReader(myInputStream, "windows-1251"), getApplicationContext());//Specify asset file name
             List<String[]> arrayList = reader.read();
             reader.saveToDB(arrayList);
-
+            showToast("All ok");
 //            Log.d(TAG, arrayList.toString());
 
 //            String [] nextLine;

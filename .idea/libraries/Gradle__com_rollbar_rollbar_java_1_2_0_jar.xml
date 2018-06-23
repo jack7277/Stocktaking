@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.rollbar:rollbar-java:1.2.0@jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.rollbar/rollbar-java/1.2.0/bd133e93dcad539c51cb2f246782bdb31795bd9a/rollbar-java-1.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.rollbar/rollbar-java/1.2.0/6c70d5fa8dbb1a88ec201caaf6f448e2afd33dc4/rollbar-java-1.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

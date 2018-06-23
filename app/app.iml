@@ -117,6 +117,7 @@
     <orderEntry type="library" name="Gradle: com.shamanland:xdroid-toaster-0.0.10" level="project" />
     <orderEntry type="library" name="Gradle: io.realm:realm-android-library-4.3.4" level="project" />
     <orderEntry type="library" name="Gradle: io.realm:realm-annotations:4.3.4@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.rollbar:rollbar-java:1.2.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support.constraint:constraint-layout-1.1.2" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-media-compat-26.1.0" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-annotations:26.1.0@jar" level="project" />
@@ -132,6 +133,8 @@
     <orderEntry type="library" name="Gradle: com.android.support:support-core-utils-26.1.0" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support.constraint:constraint-layout-solver:1.1.2@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.code.findbugs:jsr305:3.0.2@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.rollbar:rollbar-api:1.2.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.25@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.getkeepsafe.relinker:relinker-1.2.2" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:runtime-1.0.0" level="project" />
   </component>
